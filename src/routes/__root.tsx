@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Acanthera" },
+      { name: "description", content: "Acanthera Patch is a smart postauricular aromatherapy patch for smoking cessation." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Acanthera" },
+      { property: "og:description", content: "Acanthera Patch is a smart postauricular aromatherapy patch for smoking cessation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Acanthera" },
+      { name: "twitter:description", content: "Acanthera Patch is a smart postauricular aromatherapy patch for smoking cessation." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4883c1e9-962f-4c38-9a8e-abb1b9610650/id-preview-81858fa1--1f3df3bc-9102-4335-a059-c9d375907eb1.lovable.app-1782904988191.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4883c1e9-962f-4c38-9a8e-abb1b9610650/id-preview-81858fa1--1f3df3bc-9102-4335-a059-c9d375907eb1.lovable.app-1782904988191.png" },
     ],
     links: [
       {
