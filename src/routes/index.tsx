@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import productAsset from "@/assets/acanthera-product.png.asset.json";
 import {
   BarChart,
   Bar,
@@ -517,12 +518,50 @@ function Index() {
           >
             ACANTHERA <em style={{ color: C.greenGlow }}>PATCH</em>
           </h2>
-          <p style={{ maxWidth: 680, color: "rgba(247,244,236,0.75)", marginBottom: 56, fontSize: 16 }}>
-            Sebuah patch transdermal yang ditempel di area belakang telinga — jalur cepat menuju
-            sistem saraf pusat dengan absorpsi optimal dan kenyamanan tinggi.
-          </p>
+          <div
+            className="ap-grid-2"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1.1fr 0.9fr",
+              gap: 48,
+              alignItems: "center",
+              marginBottom: 72,
+            }}
+          >
+            <div>
+              <p style={{ color: "rgba(247,244,236,0.75)", fontSize: 16, marginBottom: 20 }}>
+                Sebuah patch transdermal yang ditempel di area belakang telinga — jalur cepat
+                menuju sistem saraf pusat dengan absorpsi optimal dan kenyamanan tinggi.
+              </p>
+              <p style={{ color: "rgba(247,244,236,0.65)", fontSize: 15 }}>
+                Dikemas dalam pouch higienis berisi lembaran patch bertema karakter yang ramah
+                dan menyenangkan — menjadikan proses berhenti merokok terasa lebih ringan.
+              </p>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                placeItems: "center",
+                padding: 24,
+                borderRadius: 24,
+                background:
+                  "radial-gradient(circle at 50% 40%, rgba(125,211,154,0.18), rgba(125,211,154,0) 70%)",
+              }}
+            >
+              <img
+                src={productAsset.url}
+                alt="Kemasan ACANTHERA PATCH dengan lembaran patch karakter"
+                style={{
+                  width: "100%",
+                  maxWidth: 360,
+                  height: "auto",
+                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.35))",
+                }}
+              />
+            </div>
+          </div>
 
-          <div className="ap-grid-3" style={{ marginBottom: 72 }}>
+          <div className="ap-grid-3" style={{ marginBottom: 72, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {[
               {
                 n: "01",
