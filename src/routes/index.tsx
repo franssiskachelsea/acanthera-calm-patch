@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import productAsset from "@/assets/acanthera-product.png.asset.json";
+import fotoProduk from "@/assets/fotoproduk.png";
+import destilasi from "@/assets/destilasi.jpeg";
+import ujiKLT from "@/assets/ujiklt.jpeg";
+import survei from "@/assets/survei.jpeg";
+import fotoTanaman from "@/assets/fototanaman.webp";
+import sosil from "@/assets/sosil.jpeg";
 import {
   BarChart,
   Bar,
@@ -201,6 +207,8 @@ function Index() {
         .ap-btn-primary:hover { background: ${C.greenGlow}; transform: translateY(-2px); }
         .ap-btn-ghost { background: transparent; color: ${C.cream}; border: 1.5px solid rgba(255,255,255,0.4); }
         .ap-btn-ghost:hover { background: rgba(255,255,255,0.1); }
+        .ap-hero-image { width: 100%; max-width: 480px; height: auto; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,0.4)); transform: scale(1.05); transition: transform 0.3s ease; }
+        @media (min-width: 1440px) { .ap-hero-image { transform: scale(2.5); } }
         .ap-mobile-toggle { display: none; }
         @media (max-width: 768px) {
           .ap-grid-2, .ap-grid-3, .ap-grid-4, .ap-grid-6 { grid-template-columns: 1fr !important; gap: 20px; }
@@ -327,59 +335,71 @@ function Index() {
         <Leaf style={{ bottom: 200, left: 200, transform: "rotate(80deg)" }} size={90} opacity={0.12} />
 
         <div className="ap-container" style={{ position: "relative" }}>
-          <div
-            style={{
-              display: "inline-block",
-              padding: "8px 18px",
-              borderRadius: 999,
-              background: "rgba(125, 211, 154, 0.12)",
-              border: `1px solid rgba(125, 211, 154, 0.35)`,
-              fontSize: 12.5,
-              letterSpacing: 0.5,
-              color: C.greenGlow,
-              marginBottom: 28,
-            }}
-          >
-            🌿 Inovasi Herbal Berbasis Mangrove Indonesia · SDGs 3 & 15
-          </div>
+          <div className="ap-grid-2" style={{ alignItems: "center", marginBottom: 72 }}>
+            <div style={{ position: "relative", zIndex: 10 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  padding: "8px 18px",
+                  borderRadius: 999,
+                  background: "rgba(125, 211, 154, 0.12)",
+                  border: `1px solid rgba(125, 211, 154, 0.35)`,
+                  fontSize: 12.5,
+                  letterSpacing: 0.5,
+                  color: C.greenGlow,
+                  marginBottom: 28,
+                }}
+              >
+                🌿 Inovasi Herbal Berbasis Mangrove Indonesia · SDGs 3 & 15
+              </div>
 
-          <h1
-            className="ap-hero-title"
-            style={{
-              fontSize: 64,
-              fontWeight: 400,
-              maxWidth: 900,
-              marginBottom: 20,
-              letterSpacing: -1,
-            }}
-          >
-            Berhenti Merokok dari{" "}
-            <em style={{ color: C.greenGlow, fontStyle: "italic" }}>
-              Belakang Telinga
-            </em>
-          </h1>
+              <h1
+                className="ap-hero-title"
+                style={{
+                  fontSize: 64,
+                  fontWeight: 400,
+                  maxWidth: 900,
+                  marginBottom: 20,
+                  letterSpacing: -1,
+                }}
+              >
+                Berhenti Merokok dari{" "}
+                <em style={{ color: C.greenGlow, fontStyle: "italic" }}>
+                  Belakang Telinga
+                </em>
+              </h1>
 
-          <p
-            style={{
-              fontSize: 18,
-              maxWidth: 720,
-              color: "rgba(247,244,236,0.82)",
-              marginBottom: 40,
-            }}
-          >
-            <strong style={{ color: C.greenGlow }}>ACANTHERA PATCH</strong> — Smart Postauricular
-            Aromatherapy Relaxing. Patch antirokok berbasis ekstrak minyak atsiri daun jeruju
-            (Acanthus ilicifolius) yang bekerja melalui area postauricular, menggabungkan
-            relaksasi aromaterapi dengan pengendalian craving secara herbal alami.
-          </p>
+              <p
+                style={{
+                  fontSize: 18,
+                  maxWidth: 720,
+                  color: "rgba(247,244,236,0.82)",
+                  marginBottom: 40,
+                }}
+              >
+                <strong style={{ color: C.greenGlow }}>ACANTHERA PATCH</strong> — Smart Postauricular
+                Aromatherapy Relaxing. Patch antirokok berbasis ekstrak minyak atsiri daun jeruju
+                (Acanthus ilicifolius) yang bekerja melalui area postauricular, menggabungkan
+                relaksasi aromaterapi dengan pengendalian craving secara herbal alami.
+              </p>
 
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 72 }}>
-            <button className="ap-btn ap-btn-primary" onClick={() => scrollTo("produk")}>
-              Pelajari Produk →
-            </button>
-            <button className="ap-btn ap-btn-ghost" onClick={() => scrollTo("riset")}>
-              Lihat Data Riset
-            </button>
+              <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+                <button className="ap-btn ap-btn-primary" onClick={() => scrollTo("produk")}>
+                  Pelajari Produk →
+                </button>
+                <button className="ap-btn ap-btn-ghost" onClick={() => scrollTo("riset")}>
+                  Lihat Data Riset
+                </button>
+              </div>
+            </div>
+
+            <div style={{ position: "relative", zIndex: 5, display: "flex", justifyContent: "center" }}>
+              <img 
+                src={fotoProduk} 
+                alt="Produk Acanthera Patch" 
+                className="ap-hero-image"
+              />
+            </div>
           </div>
 
           <div className="ap-grid-4">
@@ -844,7 +864,7 @@ function Index() {
                   <CartesianGrid strokeDasharray="3 3" stroke={C.border} vertical={false} />
                   <XAxis dataKey="formula" stroke={C.muted} style={{ fontSize: 12 }} />
                   <YAxis stroke={C.muted} style={{ fontSize: 12 }} />
-                  <Tooltip content={<ChartTooltip />} cursor={{ fill: "rgba(45,122,74,0.06)" }} />
+                  <Tooltip content={<ChartTooltip />} cursor={{ fill: "rgba(45,122,74,0.06)" }} animationDuration={200} />
                   <Bar dataKey="skor" name="Skor Total" radius={[8, 8, 0, 0]}>
                     {formulaData.map((d, i) => (
                       <Cell key={i} fill={d.formula.startsWith("F3") ? C.green : C.greenLight} opacity={d.formula.startsWith("F3") ? 1 : 0.55} />
@@ -1038,12 +1058,12 @@ function Index() {
 
           <div className="ap-grid-6">
             {[
-              { icon: "📦", t: "Kemasan ACANTHERA PATCH", s: "Desain packaging Marvel Edition" },
-              { icon: "⚗️", t: "Proses Destilasi Uap", s: "Steam distillation 4 jam" },
-              { icon: "🔬", t: "Uji KLT Bioaktif", s: "Identifikasi senyawa aktif" },
-              { icon: "📋", t: "Survei Jatijejer", s: "Pengambilan data 30 responden" },
-              { icon: "🌿", t: "Tanaman Jeruju", s: "Acanthus ilicifolius bahan baku" },
-              { icon: "🎤", t: "Sosialisasi Warga", s: "Presentasi & edukasi masyarakat" },
+              { icon: "📦", t: "Kemasan ACANTHERA PATCH", s: "Desain packaging Marvel Edition", img: fotoProduk },
+              { icon: "⚗️", t: "Proses Destilasi Uap", s: "Steam distillation 4 jam", img: destilasi },
+              { icon: "🔬", t: "Uji KLT Bioaktif", s: "Identifikasi senyawa aktif", img: ujiKLT },
+              { icon: "📋", t: "Survei Jatijejer", s: "Pengambilan data 30 responden", img: survei },
+              { icon: "🌿", t: "Tanaman Jeruju", s: "Acanthus ilicifolius bahan baku", img: fotoTanaman },
+              { icon: "🎤", t: "Sosialisasi Warga", s: "Presentasi & edukasi masyarakat", img: sosil },
             ].map((g, i) => (
               <div
                 key={i}
@@ -1060,14 +1080,21 @@ function Index() {
               >
                 <div
                   style={{
+                    width: "100%",
                     aspectRatio: "4/3",
                     background: `linear-gradient(135deg, ${C.greenSoft}, ${C.cream})`,
-                    display: "grid",
-                    placeItems: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     fontSize: 64,
+                    overflow: "hidden",
                   }}
                 >
-                  {g.icon}
+                  {g.img ? (
+                    <img src={g.img} alt={g.t} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : (
+                    g.icon
+                  )}
                 </div>
                 <div style={{ padding: 16 }}>
                   <h4 style={{ fontSize: 16, marginBottom: 4, color: C.forestDark }}>{g.t}</h4>
@@ -1076,10 +1103,6 @@ function Index() {
               </div>
             ))}
           </div>
-
-          <p style={{ textAlign: "center", marginTop: 24, fontSize: 13, color: C.muted, fontStyle: "italic" }}>
-            * Ganti emoji dengan foto asli penelitian
-          </p>
         </div>
       </section>
 
@@ -1197,8 +1220,8 @@ function Index() {
               style={{
                 flex: "1 1 260px",
                 padding: 20,
-                background: "rgba(43,109,179,0.15)",
-                border: `1px solid ${C.blue}`,
+                background: "rgba(76,166,109,0.15)",
+                border: `1px solid ${C.greenLight}`,
                 borderRadius: 14,
                 display: "flex",
                 gap: 14,
@@ -1210,7 +1233,7 @@ function Index() {
                   width: 48,
                   height: 48,
                   borderRadius: 10,
-                  background: C.blue,
+                  background: C.green,
                   color: C.cream,
                   display: "grid",
                   placeItems: "center",
@@ -1221,7 +1244,7 @@ function Index() {
                 3
               </div>
               <div>
-                <div style={{ fontSize: 12, color: "#8dbde6" }}>SDG 3</div>
+                <div style={{ fontSize: 12, color: C.greenGlow }}>SDG 3</div>
                 <div style={{ fontSize: 15, color: C.cream, fontWeight: 600 }}>
                   Good Health & Well-Being
                 </div>
