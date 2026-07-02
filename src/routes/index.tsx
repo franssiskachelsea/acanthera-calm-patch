@@ -208,6 +208,7 @@ function Index() {
         .ap-btn-ghost { background: transparent; color: ${C.cream}; border: 1.5px solid rgba(255,255,255,0.4); }
         .ap-btn-ghost:hover { background: rgba(255,255,255,0.1); }
         .ap-hero-image { width: 100%; max-width: 480px; height: auto; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,0.4)); transform: scale(1.05); transition: transform 0.3s ease; }
+        @media (min-width: 1024px) { .ap-hero-image { transform: scale(1.75); } }
         @media (min-width: 1440px) { .ap-hero-image { transform: scale(2.5); } }
         .ap-mobile-toggle { display: none; }
         @media (max-width: 768px) {
@@ -532,23 +533,24 @@ function Index() {
         <Leaf style={{ top: 60, right: 30, transform: "rotate(45deg)" }} size={200} opacity={0.06} />
         <div className="ap-container" style={{ position: "relative" }}>
           <SectionLabel dark>02 — Produk</SectionLabel>
-          <h2
-            className="ap-h2"
-            style={{ fontSize: 46, marginTop: 20, marginBottom: 14, color: C.cream }}
-          >
-            ACANTHERA <em style={{ color: C.greenGlow }}>PATCH</em>
-          </h2>
           <div
             className="ap-grid-2"
             style={{
               display: "grid",
               gridTemplateColumns: "1.1fr 0.9fr",
               gap: 48,
-              alignItems: "center",
+              alignItems: "flex-start",
               marginBottom: 72,
+              marginTop: 16
             }}
           >
             <div>
+              <h2
+                className="ap-h2"
+                style={{ fontSize: 46, marginTop: 0, marginBottom: 24, color: C.cream }}
+              >
+                ACANTHERA <em style={{ color: C.greenGlow }}>PATCH</em>
+              </h2>
               <p style={{ color: "rgba(247,244,236,0.75)", fontSize: 16, marginBottom: 20 }}>
                 Sebuah patch transdermal yang ditempel di area belakang telinga — jalur cepat
                 menuju sistem saraf pusat dengan absorpsi optimal dan kenyamanan tinggi.
@@ -560,22 +562,21 @@ function Index() {
             </div>
             <div
               style={{
-                display: "grid",
-                placeItems: "center",
-                padding: 24,
-                borderRadius: 24,
-                background:
-                  "radial-gradient(circle at 50% 40%, rgba(125,211,154,0.18), rgba(125,211,154,0) 70%)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "flex-start",
               }}
             >
               <img
-                src={productAsset.url}
+                src={fotoProduk}
                 alt="Kemasan ACANTHERA PATCH dengan lembaran patch karakter"
                 style={{
                   width: "100%",
-                  maxWidth: 360,
+                  maxWidth: 480,
                   height: "auto",
-                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.35))",
+                  filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.4))",
+                  transform: "scale(1.1)",
+                  transformOrigin: "top center"
                 }}
               />
             </div>
