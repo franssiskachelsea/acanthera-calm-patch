@@ -391,7 +391,7 @@ function Index() {
                 <button className="ap-btn ap-btn-ghost" onClick={() => scrollTo("riset")}>
                   Lihat Data Riset
                 </button>
-                <a href="/monitor" className="ap-btn ap-btn-ghost" style={{ textDecoration: 'none' }}>
+                <a href="https://acanthera-patch-monitor.vercel.app/" target="_blank" rel="noopener noreferrer" className="ap-btn ap-btn-ghost" style={{ textDecoration: 'none' }}>
                   Akses Monitor
                 </a>
               </div>
