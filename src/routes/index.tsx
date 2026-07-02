@@ -391,6 +391,9 @@ function Index() {
                 <button className="ap-btn ap-btn-ghost" onClick={() => scrollTo("riset")}>
                   Lihat Data Riset
                 </button>
+                <a href="/monitor" className="ap-btn ap-btn-ghost" style={{ textDecoration: 'none' }}>
+                  Akses Monitor
+                </a>
               </div>
             </div>
 

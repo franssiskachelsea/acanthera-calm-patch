@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/monitor/:match*",
+      "destination": "https://acanthera-patch-monitor.vercel.app/:match*"
+    },
+    {
+      "source": "/monitor",
+      "destination": "https://acanthera-patch-monitor.vercel.app/"
+    }
+  ]
+}
